@@ -20,6 +20,7 @@
     _placeholderName = placeholderName;
     if (self == [super initWithFrame:frame] ) {
         NSAssert([data isKindOfClass:[ImageInfoData class]], @"data 必须为ImageInfoData实例对象！");
+        self.contentMode = UIViewContentModeScaleAspectFill;
 //        && [data isKindOfClass:[ImageInfoData class]]
         self.infoData = data;
         if (target != nil && [target isKindOfClass:[UIViewController class]]) {
