@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01558A9B216F5A5200A7E6E7 /* 分享方式.png in Resources */ = {isa = PBXBuildFile; fileRef = 01558A9A216F5A5200A7E6E7 /* 分享方式.png */; };
 		017E19742151EF620050DB89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 017E19732151EF620050DB89 /* AppDelegate.m */; };
 		017E19772151EF620050DB89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017E19762151EF620050DB89 /* ViewController.m */; };
 		017E197A2151EF620050DB89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017E19782151EF620050DB89 /* Main.storyboard */; };
@@ -62,7 +61,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01558A9A216F5A5200A7E6E7 /* 分享方式.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享方式.png"; sourceTree = "<group>"; };
 		017E196F2151EF620050DB89 /* demoObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demoObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		017E19722151EF620050DB89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		017E19732151EF620050DB89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		017E19712151EF620050DB89 /* demoObjc */ = {
 			isa = PBXGroup;
 			children = (
-				01558A9A216F5A5200A7E6E7 /* 分享方式.png */,
 				017E19B82151F4EC0050DB89 /* SDWebImage */,
 				017E19A62151EF860050DB89 /* BannerView */,
 				017E19722151EF620050DB89 /* AppDelegate.h */,
@@ -436,7 +433,6 @@
 			files = (
 				017E19DF2151F4EC0050DB89 /* LICENSE in Resources */,
 				017E197F2151EF640050DB89 /* LaunchScreen.storyboard in Resources */,
-				01558A9B216F5A5200A7E6E7 /* 分享方式.png in Resources */,
 				017E197C2151EF640050DB89 /* Assets.xcassets in Resources */,
 				017E19E02151F4EC0050DB89 /* README.md in Resources */,
 				017E197A2151EF620050DB89 /* Main.storyboard in Resources */,
