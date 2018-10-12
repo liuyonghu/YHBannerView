@@ -41,14 +41,21 @@
         }
         [imageArray addObject:data];
         
+        
+   
     }
 //    imageArray = @[@"1",@"2"];
     _bannerView = [[YHBannerView alloc]initWithFrame:CGRectMake(0, 20,sWidth , 200) withTargetViewController:self andImageInfoArray:imageArray withPaceholder:@""];
     [self.view addSubview:_bannerView];
     // Do any additional setup after loading the view, typically from a nib.
+    
+
+    
 }
 
-
+- (void)sliderAction:(UISlider *)slider{
+    NSLog(@"slider move %.2f",slider.value);
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -28,7 +28,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame withTargetViewController:(UIViewController *)targetViewController andImageInfoArray:(NSArray <ImageInfoData *>*)imageInfoArray  withPaceholder:(NSString *)placeholder{
     
-//    NSLog(@"imageArray = %@",imageArray);
+    //    NSLog(@"imageArray = %@",imageArray);
     if (self ==  [super initWithFrame:frame]) {
         self.backScrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
         
@@ -100,16 +100,19 @@
 }
 
 #pragma MARK scroll delegate
+
 - (void)scrollBanner{
-    if (_pageNumber >_imageArray.count-2) {
+    if (_pageNumber >=_imageArray.count-2) {
         _pageNumber = 0;
     }
-self.pageControl.currentPage = _pageNumber;
- self.backScrollView.contentOffset = CGPointMake((self.pageControl.currentPage+1) *sWdith, 0);
+//     _pageNumber ++;
+    self.pageControl.currentPage = _pageNumber;
+    self.backScrollView.contentOffset = CGPointMake((self.pageControl.currentPage+1) *sWdith, 0);
     
-  _pageNumber ++;
-//    number ***
-//    NSLog(@"self.pageControl.currentPage= %ld -- %ld",self.pageControl.currentPage,_imageArray.count-2);
+    _pageNumber ++;
+//    NSLog(@"number == %ld",_pageNumber);
+    //    number ***
+    //    NSLog(@"self.pageControl.currentPage= %ld -- %ld",self.pageControl.currentPage,_imageArray.count-2);
 }
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [self.bannnerTimer invalidate];
@@ -153,15 +156,15 @@ self.pageControl.currentPage = _pageNumber;
     self.pageControl.currentPage = _pageNumber;
     //    NSLog(@"_pageNumber = %ld",_pageNumber);
     [self.bannnerTimer fire];
-  
+    
 }
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    self.scrollRight =velocity.x > 0 ? YES:NO;
+    self.scrollRight = velocity.x > 0 ? YES:NO;
 }
 
 -(NSTimer *)bannnerTimer{
     if (!_bannnerTimer) {
-      _bannnerTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(scrollBanner) userInfo:nil repeats:YES];
+        _bannnerTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(scrollBanner) userInfo:nil repeats:YES];
     }
     return _bannnerTimer;
 }
