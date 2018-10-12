@@ -18,7 +18,8 @@
 
 @interface YHBannerView ()<UIScrollViewDelegate>
 @property(nonatomic,strong)NSMutableArray *imageArray;
-@property(nonatomic,assign)BOOL scrollRight;
+//判断是否滑动到最左侧或者最右侧
+@property(nonatomic,assign)BOOL scrollRightSide;
 @property(nonatomic,assign)NSInteger pageNumber;
 @property(nonatomic,strong)UIPageControl *pageControl;
 @property(nonatomic,strong)UIScrollView  *backScrollView;
@@ -122,7 +123,8 @@
     NSLog(@"123");
 }
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    if (self.scrollRight) {
+    
+    if (self.scrollRightSide) {
         switch (_imageArray.count) {
             case 3:{
                 [scrollView setContentOffset:CGPointMake(sWdith , 0) animated:NO];
@@ -132,7 +134,7 @@
                 if (scrollView.contentOffset.x/sWdith > (_imageArray.count-2)) {
                     [scrollView setContentOffset:CGPointMake(sWdith, 0) animated:NO];
                 }
-                
+
             }
                 break;
         }
@@ -146,7 +148,7 @@
                 if (scrollView.contentOffset.x/sWdith  < 1) {
                     [scrollView setContentOffset:CGPointMake(sWdith *(_imageArray.count-2), 0) animated:NO];
                 }
-                
+
             }
                 break;
         }
@@ -159,7 +161,7 @@
     
 }
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    self.scrollRight = velocity.x > 0 ? YES:NO;
+    self.scrollRightSide = velocity.x > 0 ? YES:NO;
 }
 
 -(NSTimer *)bannnerTimer{
